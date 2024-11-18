@@ -96,7 +96,7 @@ def login_user():
         return jsonify({"msg": "Invalid password"}), 401
 
     token = encode_jwt(user['sys_id'])
-    return jsonify(access_token=token), 200
+    return token
 
 
 @app.route('/protected', methods=['GET'])
